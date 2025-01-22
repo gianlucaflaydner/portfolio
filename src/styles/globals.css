@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.transition-screen {
+  animation: fadeOut 1.5s ease-in forwards;
+}
+
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+ 
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.content-slide-down {
+  animation: slideDown 1s ease-out forwards;
+}
