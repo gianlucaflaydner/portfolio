@@ -23,14 +23,12 @@ html {
   animation: fadeOut 1.5s ease-in forwards;
 }
 
-
 @keyframes slideDown {
   0% {
     transform: translateY(-50%);
     opacity: 0;
   }
 
- 
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -40,3 +38,21 @@ html {
 .content-slide-down {
   animation: slideDown 1s ease-out forwards;
 }
+
+.logo {
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    #09f1b8,
+    #00a2ff,
+    #ff00d2,
+    #fed90f
+  );
+  font-weight: 700;
+  letter-spacing: calc(1em / 8);
+  padding: calc(calc(1em / 16) / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+}
+
+

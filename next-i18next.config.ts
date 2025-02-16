@@ -3,9 +3,10 @@ import { UserConfig } from 'next-i18next';
 
 const nextI18NextConfig: UserConfig = {
   i18n: {
-    defaultLocale: 'en',
     locales: ['en', 'pt'],
+    defaultLocale: 'pt',
   },
+
   localePath:
     typeof window === 'undefined'
       ? require('path').resolve('./public/locales')
