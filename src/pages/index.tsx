@@ -39,6 +39,7 @@ export default function Home() {
       description: t('project1_description'),
       image: '/images/vista-aerea-filmes.webp',
       repo: 'https://github.com/gianlucaflaydner/vista-aerea-filmes',
+      buttonText: t('projects_button_text')
     },
     {
       id: 2,
@@ -46,6 +47,7 @@ export default function Home() {
       description: t('project2_description'),
       image: '/images/movies-list-image.jpg',
       repo: 'https://github.com/gianlucaflaydner/movies-list',
+      buttonText: t('projects_button_text')
     },
     {
       id: 3,
@@ -53,6 +55,7 @@ export default function Home() {
       description: t('project3_description'),
       image: '/images/bitcent.webp',
       repo: 'https://github.com/gianlucaflaydner/bitcent',
+      buttonText: t('projects_button_text')
     },
     {
       id: 4,
@@ -60,6 +63,7 @@ export default function Home() {
       description: t('project4_description'),
       image: '/images/sorteador-amigo-secreto.png',
       repo: 'https://github.com/gianlucaflaydner/sorteador-amigo-secreto',
+      buttonText: t('projects_button_text')
     },
     {
       id: 5,
@@ -67,6 +71,7 @@ export default function Home() {
       description: t('project5_description'),
       image: '/images/pokemon-image.jpg',
       repo: 'https://github.com/gianlucaflaydner/pokesite',
+      buttonText: t('projects_button_text')
     },
     {
       id: 6,
@@ -74,6 +79,7 @@ export default function Home() {
       description: t('project6_description'),
       image: '/images/hotel-image.jpg',
       repo: 'https://github.com/gianlucaflaydner/dev-fullstack-2-hotel',
+      buttonText: t('projects_button_text')
     },
   ];
 

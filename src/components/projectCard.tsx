@@ -7,6 +7,7 @@ export interface Project {
   name: string;
   description: string;
   repo: string;
+  buttonText: string;
 }
 
 export default function ProjectCard({
@@ -15,6 +16,7 @@ export default function ProjectCard({
   image,
   repo,
   description,
+  buttonText
 }: Project) {
   return (
     <>
@@ -44,7 +46,7 @@ export default function ProjectCard({
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
           >
             <FaGithub size={18} />
-            Ver Repositório
+            {buttonText}
           </a>
         </div>
       </div>

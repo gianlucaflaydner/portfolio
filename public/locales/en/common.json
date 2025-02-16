@@ -21,6 +21,7 @@
     "project5_description": "In this project it was created the PokeSite, a web site created using the consumption of the famous PokemonAPI to make an interactive Pokedex, in addition of a page listing all pokemons utilyzing the concept of pagination disponibilized by the API. In the creation of this project was intended the utilization of diverses concepts of clean code, organized software architecture, besides of a lot code refactoring, intending to improve the site perfomance. Developed using the following technologies: React JS, Typescript, HTML5 and CSS3. In addition to using the libs axios and react-router-dom.",
     "project6_title": "Chimia Hotel",
     "project6_description": "In this project, the Hotel Chimia website was developed, a website developed as a final work in the Fullstack 2 Development course at the college. A responsive and simple website, but made to practice developing a website from the database to the visual interface.",
+    "projects_button_text": "Repository",
     "contact_information_title": "Contact Information",
     "contact_section_title": "Get in Touch",
     "contact_section_name_label": "Name",
@@ -30,4 +31,5 @@
     "contact_section_message_placeholder": "Your message here...",
     "contact_section_button_label": "Send Message",
     "contact_section_email_success_message": "Email sent successfully!"
+
   }
