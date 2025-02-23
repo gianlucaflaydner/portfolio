@@ -1,8 +1,10 @@
-import { Html, Main, NextScript } from 'next/document';
+import { Html, Main, Head, NextScript } from 'next/document';
+
 
 export default function Document() {
   return (
     <Html lang="pt">
+      <Head />
       <body className="antialiased">
         <Main />
         <NextScript />
