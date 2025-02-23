@@ -119,7 +119,7 @@ export default function Home() {
     },
     {
       name: 'Esplanada Móveis',
-      logo: '/images/esplanada-moveis.jfif',
+      logo: '/images/esplanada.png',
       url: 'https://www.esplanadamoveis.com.br/',
     },
     {
