@@ -1,5 +1,6 @@
 {
     "about": "Sobre",
+    "career": "Carreira",
     "skills": "Habilidades",
     "projects": "Projetos",
     "contact": "Contato",
@@ -30,5 +31,11 @@
     "contact_section_message_label": "Mensagem",
     "contact_section_message_placeholder": "Sua mensagem aqui...",
     "contact_section_button_label": "Enviar Mensagem",
-    "contact_section_email_success_message": "Email enviado com sucesso!"
+    "contact_section_email_success_message": "Email enviado com sucesso!",
+    "career_section_title": "Minha Jornada Profissional",
+    "career_position_1": "Desenvolvedor Estagiário",
+    "career_position_2": "Desenvolvedor Junior",
+    "career_position_3": "Desenvolvedor Pleno",
+    "now": "Presente",
+    "companies_section_title": "Projetos que trabalhei"
   }

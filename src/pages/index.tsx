@@ -17,6 +17,9 @@ import SkillsSection from '@/widgets/skills';
 import Divider from '@/components/divider';
 import ProjectsSection from '@/widgets/projects';
 import ContactSection from '@/widgets/contact';
+import TimelineSection from '@/widgets/timelineSection';
+import { Company, TimelineItem } from '@/types/career';
+import CompaniesSection from '@/widgets/companiesSection';
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -39,7 +42,7 @@ export default function Home() {
       description: t('project1_description'),
       image: '/images/vista-aerea-filmes.webp',
       repo: 'https://github.com/gianlucaflaydner/vista-aerea-filmes',
-      buttonText: t('projects_button_text')
+      buttonText: t('projects_button_text'),
     },
     {
       id: 2,
@@ -47,7 +50,7 @@ export default function Home() {
       description: t('project2_description'),
       image: '/images/movies-list-image.jpg',
       repo: 'https://github.com/gianlucaflaydner/movies-list',
-      buttonText: t('projects_button_text')
+      buttonText: t('projects_button_text'),
     },
     {
       id: 3,
@@ -55,7 +58,7 @@ export default function Home() {
       description: t('project3_description'),
       image: '/images/bitcent.webp',
       repo: 'https://github.com/gianlucaflaydner/bitcent',
-      buttonText: t('projects_button_text')
+      buttonText: t('projects_button_text'),
     },
     {
       id: 4,
@@ -63,7 +66,7 @@ export default function Home() {
       description: t('project4_description'),
       image: '/images/sorteador-amigo-secreto.png',
       repo: 'https://github.com/gianlucaflaydner/sorteador-amigo-secreto',
-      buttonText: t('projects_button_text')
+      buttonText: t('projects_button_text'),
     },
     {
       id: 5,
@@ -71,7 +74,7 @@ export default function Home() {
       description: t('project5_description'),
       image: '/images/pokemon-image.jpg',
       repo: 'https://github.com/gianlucaflaydner/pokesite',
-      buttonText: t('projects_button_text')
+      buttonText: t('projects_button_text'),
     },
     {
       id: 6,
@@ -79,7 +82,55 @@ export default function Home() {
       description: t('project6_description'),
       image: '/images/hotel-image.jpg',
       repo: 'https://github.com/gianlucaflaydner/dev-fullstack-2-hotel',
-      buttonText: t('projects_button_text')
+      buttonText: t('projects_button_text'),
+    },
+  ];
+
+  const timelineItems: TimelineItem[] = [
+    {
+      title: t('career_position_1'),
+      duration: '2022 - 2023',
+    },
+    {
+      title: t('career_position_2'),
+      duration: '2023 - 2025',
+    },
+    {
+      title: t('career_position_3'),
+      duration: `2025 - ${t('now')}`,
+    },
+  ];
+
+  const companies: Company[] = [
+    {
+      name: 'Salon Line',
+      logo: '/images/salon-line.webp',
+      url: 'https://www.salonline.com.br/',
+    },
+    {
+      name: 'Zema',
+      logo: '/images/zema.png',
+      url: 'https://www.zema.com/',
+    },
+    {
+      name: 'Entel',
+      logo: '/images/entel.png',
+      url: 'https://www.entel.cl/',
+    },
+    {
+      name: 'Esplanada Móveis',
+      logo: '/images/esplanada-moveis.jfif',
+      url: 'https://www.esplanadamoveis.com.br/',
+    },
+    {
+      name: "D'avó Supermercados",
+      logo: '/images/davo.png',
+      url: 'https://www.davo.com.br/',
+    },
+    {
+      name: 'Confiança Delivery',
+      logo: '/images/confiança.svg',
+      url: 'https://www.confianca.com.br/',
     },
   ];
 
@@ -118,16 +169,24 @@ export default function Home() {
               profileJob={t('profile_job')}
             />
             <Divider />
+            <TimelineSection
+              timelineItems={timelineItems}
+              careerSectionTitle={t('career_section_title')}
+            />
+            <CompaniesSection
+              companies={companies}
+              companiesSectionTitle={t('companies_section_title')}
+            />
+            <Divider />
             <SkillsSection
               skillsDescription={t('skills_description')}
               skillsTitle={t('skills_title')}
             />
-            <Divider />
+
             <ProjectsSection
               projects={projects}
               sectionTitle={t('projects_title')}
             />
-            <Divider />
             <ContactSection
               contactInformationTitle={t('contact_information_title')}
               contactSectionTitle={t('contact_section_title')}

@@ -31,6 +31,11 @@ export default function Header({ className }: HeaderProps) {
             </Link>
           </li>
           <li>
+            <Link href="#career" className="text-gray-800 hover:text-blue-600">
+              {t('career')}
+            </Link>
+          </li>
+          <li>
             <Link href="#skills" className="text-gray-800 hover:text-blue-600">
               {t('skills')}
             </Link>
