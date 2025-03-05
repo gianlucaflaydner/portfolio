@@ -1,17 +1,22 @@
+import useTranslation from '@/hooks/useTranslation';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+
+import { useRouter } from 'next/router';
 
 interface HeaderProps {
   className?: string;
 }
 
 export default function Header({ className }: HeaderProps) {
-  const { t, i18n } = useTranslation();
+  const router = useRouter();
+  const { pathname, asPath, query, locale } = router;
+  const { t } = useTranslation();
 
-  const currentLanguage = i18n.language;
+  const currentLanguage = locale === 'pt' ? 'pt' : 'en'; 
+
   const toggleLanguage = () => {
-    const nextLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
-    i18n.changeLanguage(nextLanguage);
+    const newLocale = currentLanguage === 'pt' ? 'en' : 'pt';
+    router.push({ pathname, query }, asPath, { locale: newLocale });
   };
 
   return (

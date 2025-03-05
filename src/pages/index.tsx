@@ -9,9 +9,6 @@ const robotoMono = Roboto_Mono({
   variable: '--font-roboto-mono',
 });
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import nextI18NextConfig from '../../next-i18next.config';
-import { useTranslation } from 'next-i18next';
 import AboutSection from '@/widgets/about';
 import SkillsSection from '@/widgets/skills';
 import Divider from '@/components/divider';
@@ -20,20 +17,36 @@ import ContactSection from '@/widgets/contact';
 import TimelineSection from '@/widgets/timelineSection';
 import { Company, TimelineItem } from '@/types/career';
 import CompaniesSection from '@/widgets/companiesSection';
+import useTranslation from '@/hooks/useTranslation';
 
-export async function getStaticProps({ locale }: { locale: string }) {
+import fs from 'fs';
+import path from 'path';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function getStaticProps({ locale }: any) {
+  const filePath = path.join(
+    process.cwd(),
+    'public',
+    'locales',
+    locale,
+    'common.json',
+  );
+
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+
+  const translations = JSON.parse(fileContent);
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      translations,
     },
-    revalidate: 3600,
   };
 }
 
 export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isContentAnimating, setIsContentAnimating] = useState(false);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation();
 
   const projects = [
     {
