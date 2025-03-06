@@ -30,7 +30,7 @@ export default function AboutSection(props: AboutProps) {
       />
       <h1 className="mt-4 text-3xl font-bold">Gianluca Laydner</h1>
       <p className="mt-2 text-xl text-gray-600">{profileJob}</p>
-      <p className="mt-4 max-w-2xl mx-auto text-xs md:text-base">{profileDescription}</p>
+      <p className="mt-4 md:max-w-2xl md:mx-auto mx-4 text-xs md:text-base">{profileDescription}</p>
 
       <a
         href={cvFile}
