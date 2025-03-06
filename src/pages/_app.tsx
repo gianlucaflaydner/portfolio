@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/next';
 import Head from 'next/head';
 
 function App({ Component, pageProps }: AppProps) {
@@ -16,6 +17,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="canonical" href="https://gianlucalaydner.dev" />
       </Head>
       <Component {...pageProps} />
+      <Analytics />
     </>
   );
 }
