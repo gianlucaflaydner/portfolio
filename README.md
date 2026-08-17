@@ -1,40 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# gianlucalaydner.dev
 
-## Getting Started
+Portfolio of Gianluca Laydner — frontend developer working in retail e-commerce
+on Oracle Commerce Cloud.
 
-First, run the development server:
+## Running it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn install
+yarn dev          # http://localhost:3000 → redirects to /pt
+yarn build        # production build
+yarn start        # serve the production build
+yarn lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · next-intl v4
+· Motion · Lenis · deployed on Vercel.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Deliberately the same stack as [EverMemo](https://ever-memo.com) and
+[Futeboldle](https://futeboldle.com.br) — three projects, one set of tools to
+keep current.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Layout
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+messages/{pt,en}.json     all copy, both locales
+middleware.ts             next-intl locale routing
+src/
+  app/[locale]/           layout, page, generated OG image
+  app/{robots,sitemap}.ts
+  content/                the facts: employers, storefronts, products, repos, tools
+  i18n/                   routing, request config, navigation helpers
+  sections/               one file per page section
+  components/             shelf, rail tag, header, footer, form, motion helpers
+  lib/site.ts             canonical URL and contact details, single source
+  styles/globals.css      the whole design token system
+```
 
-## Learn More
+Content lives in `src/content/` as typed data and copy lives in `messages/`.
+Adding a storefront means editing one array in `src/content/work.ts` plus its
+sector label in both message files — the stats bar, the shelf and the career
+counts all derive from it.
 
-To learn more about Next.js, take a look at the following resources:
+## Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+The visual direction is recorded in `DESIGN.md`, the product truth behind it in
+`PRODUCT.md`. The page's direction contract also ships as an HTML comment at the
+top of `<body>` in the built output.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Both were produced with [Impeccable](https://github.com/pbakaus/impeccable),
+installed under `.claude/skills/`.
 
-## Deploy on Vercel
+## Environment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The contact form posts through EmailJS and needs three public variables, set in
+Vercel (and in `.env.local` to test it locally):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+```
+NEXT_PUBLIC_EMAILJS_SERVICE_ID
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+NEXT_PUBLIC_EMAILJS_USER_ID
+```
+
+Without them the form is replaced by a direct mail link rather than rendering a
+control that cannot work.

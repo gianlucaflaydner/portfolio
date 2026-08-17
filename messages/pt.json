@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Gianluca Laydner · Desenvolvedor Fullstack de e-commerce",
+    "titleTemplate": "{page} · Gianluca Laydner",
+    "description": "Desenvolvedor especializado em e-commerce com Oracle Commerce Cloud. Treze lojas online no Brasil, Uruguai e Chile, mais dois produtos próprios no ar."
+  },
+  "nav": {
+    "work": "Lojas",
+    "career": "Trajetória",
+    "products": "Produtos",
+    "stack": "Ferramentas",
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "skipToContent": "Pular para o conteúdo",
+    "home": "Voltar ao topo"
+  },
+  "lang": {
+    "label": "Idioma",
+    "pt": "Português",
+    "en": "English",
+    "switchTo": "Ver em inglês"
+  },
+  "hero": {
+    "headline": "Construo as lojas onde a América Latina compra",
+    "lede": "Desenvolvedor especializado em e-commerce com Oracle Commerce Cloud. Treze lojas online no ar, três países, desde 2022.",
+    "ctaPrimary": "Falar comigo",
+    "ctaSecondary": "Ver as lojas",
+    "scrollHint": "Role para percorrer as lojas"
+  },
+  "stats": {
+    "storefronts": "lojas no ar",
+    "countries": "países",
+    "years": "anos de estrada",
+    "products": "produtos próprios"
+  },
+  "shelf": {
+    "title": "Treze lojas online no ar",
+    "lede": "Gente de verdade compra nessas lojas todo dia. Nenhuma é protótipo, nenhuma é exercício.",
+    "visit": "Visitar {name}"
+  },
+  "career": {
+    "title": "Três empresas, uma especialidade",
+    "lede": "Comecei como estagiário e cheguei a pleno na mesma casa, antes de levar a especialidade para outras duas. A carteira de clientes mudou, o dever não.",
+    "current": "Atual",
+    "storefrontsBuilt": "{count, plural, one {# loja} other {# lojas}}",
+    "present": "hoje",
+    "roles": {
+      "lighthouse": "Estagiário → Desenvolvedor Pleno",
+      "jbq": "Desenvolvedor Pleno",
+      "aggrandize": "Desenvolvedor Pleno"
+    }
+  },
+  "products": {
+    "title": "Dois produtos que eu criei e opero",
+    "lede": "Fora do expediente eu não faço exercício de portfólio: eu lanço produto. Concepção, código, infraestrutura, domínio e suporte. Os dois estão no ar agora.",
+    "visit": "Abrir {name}",
+    "screenshotAlt": "Tela inicial do {name}",
+    "evermemo": {
+      "tagline": "Presente digital com QR code",
+      "body": "Fotos, música e mensagem viram uma página que existe para uma pessoa só. Quem recebe aponta a câmera para um QR code impresso e a memória abre. Tem templates por ocasião, planos pagos e fluxo de pagamento completo."
+    },
+    "futeboldle": {
+      "tagline": "Jogo diário de futebol",
+      "body": "Todo dia um jogador secreto para adivinhar, comparando cinco atributos até acertar. São dois modos diários, Copa do Mundo e Brasileirão Série A, mais o Escalação Retrô, que sorteia clube e ano e desafia você a montar o timaço. Os elencos vêm de Wikipedia e Wikidata, com curadoria minha."
+    }
+  },
+  "stack": {
+    "title": "Ferramentas",
+    "groups": {
+      "languages": "Linguagens e frameworks",
+      "commerce": "E-commerce",
+      "styling": "Estilização",
+      "data": "Dados, testes e deploy"
+    }
+  },
+  "contact": {
+    "title": "Vamos conversar",
+    "lede": "Estou aberto a vagas e a projetos, no Brasil ou fora.",
+    "directTitle": "Direto",
+    "formTitle": "Ou me escreva por aqui",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Como te chamo?",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Para onde eu respondo",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Sobre o que você quer falar?",
+    "submit": "Enviar mensagem",
+    "sending": "Enviando…",
+    "success": "Mensagem enviada. Costumo responder em até um dia útil.",
+    "errorSend": "A mensagem não saiu. Tente de novo, ou escreva direto para {email}.",
+    "errorConfig": "O formulário está fora do ar. Escreva direto para {email}.",
+    "errorName": "Escreva seu nome.",
+    "errorEmail": "Escreva um e-mail válido para eu conseguir responder.",
+    "errorMessage": "Escreva sua mensagem.",
+    "phoneLabel": "Telefone",
+    "emailLinkLabel": "E-mail",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "whatsappLabel": "WhatsApp"
+  },
+  "footer": {
+    "rights": "© {year} Gianluca Laydner. Todos os direitos reservados."
+  },
+  "sectors": {
+    "salon-line": "Beleza e cosméticos",
+    "zema": "Varejo e eletro",
+    "entel": "Telecomunicações",
+    "esplanada": "Móveis",
+    "davo": "Supermercado",
+    "confianca": "Supermercado",
+    "iplace-br": "Apple Premium Reseller",
+    "iplace-uy": "Apple Premium Reseller",
+    "taqi": "Varejo e eletro",
+    "volis": "Colchões",
+    "voulevar": "Móveis",
+    "frigelar": "Refrigeração e climatização",
+    "eos": "Eletrodomésticos"
+  },
+  "countries": {
+    "BR": "Brasil",
+    "UY": "Uruguai",
+    "CL": "Chile"
+  }
+}
