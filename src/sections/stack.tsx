@@ -47,7 +47,11 @@ export default async function Stack() {
                         key={item}
                         className="type-display text-[1.35rem] leading-tight"
                       >
-                        {item}
+                        {/* Product names never translate; a leading @ marks the
+                            few entries that are descriptions, not names. */}
+                        {item.startsWith('@')
+                          ? t(`items.${item.slice(1)}`)
+                          : item}
                       </li>
                     ))}
                   </ul>
