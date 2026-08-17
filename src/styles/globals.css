@@ -1,56 +1,196 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-  scroll-behavior: smooth;
+/* ---------------------------------------------------------------------------
+   Warm paper, one saturated block, a hairline modular grid.
+
+   The grid is the world: content sits on it, the accent snaps to whole cells,
+   and mono annotations pin to cell corners. Light only — the register this
+   follows has no dark rendition, and one theme done sharply beats two done
+   lukewarm.
+--------------------------------------------------------------------------- */
+
+@theme {
+  --color-paper: #fbf7ef;
+  --color-panel: #f2ebde;
+  --color-panel-hi: #fdfbf6;
+  --color-ink: #16150f;
+  --color-ink-soft: #6b675c;
+  --color-line: #e0d8c7;
+  --color-accent: #1b4de4;
+  --color-accent-deep: #1339b0;
+  --color-on-accent: #fbf7ef;
+
+  --font-display: var(--font-display-face), ui-serif, Georgia, serif;
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-panel: 1.5rem;
+  --radius-pill: 999px;
+
+  /* The one easing everything uses, so the whole page moves in one hand. */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Cell size of the hero grid. The accent blocks snap to multiples of it. */
+  --cell: 8.5rem;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 7rem;
   }
 
-  50% {
-    opacity: 1;
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
-  100% {
-    opacity: 0;
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* A scroll destination is not a control; it gets no ring. */
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border: 3px solid var(--color-paper);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-ink-soft);
+  }
+  * {
+    scrollbar-color: var(--color-line) var(--color-paper);
+  }
+
+  a,
+  button {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: from-font;
   }
 }
 
-.transition-screen {
-  animation: fadeOut 1.5s ease-in forwards;
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(-50%);
-    opacity: 0;
+@layer components {
+  /* Display: large, light, generous. Instrument Serif ships one weight, so
+     scale and measure do the work rather than weight. */
+  .type-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+    text-wrap: balance;
   }
 
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+  /* Labels, years and country codes. Set in the interface face rather than a
+     monospace: the typewriter texture read as a costume next to the serif, and
+     small caps with open tracking do the labelling job without it. */
+  .type-note {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-ink-soft);
+  }
+
+  /* Domains and other strings that lose legibility in capitals. */
+  .type-quiet {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+  }
+
+  .panel {
+    background-color: var(--color-panel);
+    border-radius: var(--radius-panel);
+  }
+
+  /* THE GRID — the page's ground truth. Drawn, not implied: content aligns to
+     it and the accent snaps to whole cells. */
+  .grid-field {
+    background-image:
+      linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+    background-size: var(--cell) var(--cell);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-pill);
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition:
+      transform 0.4s var(--ease-out-soft),
+      background-color 0.3s var(--ease-out-soft),
+      border-color 0.3s var(--ease-out-soft);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-solid {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+  .btn-solid:hover {
+    background-color: var(--color-accent);
+  }
+
+  .btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+  .btn-accent:hover {
+    background-color: var(--color-accent-deep);
+  }
+
+  .btn-quiet {
+    border: 1px solid var(--color-line);
+    color: var(--color-ink);
+  }
+  .btn-quiet:hover {
+    border-color: var(--color-ink);
+  }
+
+  /* Entrance masks. Content is visible by default; the motion layer adds
+     `data-anim` only once it has confirmed motion is welcome, so a failed
+     script can never leave a section blank. */
+  [data-anim='mask'] > * {
+    will-change: transform;
   }
 }
 
-.content-slide-down {
-  animation: slideDown 1s ease-out forwards;
-}
-
-.logo {
-  background-clip: text;
-  background-image: linear-gradient(
-    to right,
-    #09f1b8,
-    #00a2ff,
-    #ff00d2,
-    #fed90f
-  );
-  font-weight: 700;
-  letter-spacing: calc(1em / 8);
-  padding: calc(calc(1em / 16) / 2);
-  -webkit-text-stroke-color: transparent;
-  -webkit-text-stroke-width: calc(1em / 16);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

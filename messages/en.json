@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Gianluca Laydner · Fullstack e-commerce developer",
+    "titleTemplate": "{page} · Gianluca Laydner",
+    "description": "Developer specialising in e-commerce with Oracle Commerce Cloud. Thirteen online stores across Brazil, Uruguay and Chile, plus two products of my own, live."
+  },
+  "nav": {
+    "work": "Stores",
+    "career": "Track record",
+    "products": "Products",
+    "stack": "Tools",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "home": "Back to top"
+  },
+  "lang": {
+    "label": "Language",
+    "pt": "Português",
+    "en": "English",
+    "switchTo": "View in Portuguese"
+  },
+  "hero": {
+    "headline": "I build the online stores Latin America shops in",
+    "lede": "Developer specialising in e-commerce with Oracle Commerce Cloud. Thirteen online stores live, three countries, since 2022.",
+    "ctaPrimary": "Get in touch",
+    "ctaSecondary": "See the stores",
+    "scrollHint": "Scroll to travel the stores"
+  },
+  "stats": {
+    "storefronts": "online stores live",
+    "countries": "countries",
+    "years": "years in",
+    "products": "products of my own"
+  },
+  "shelf": {
+    "title": "Thirteen online stores, live",
+    "lede": "Real people shop in these every day. None is a prototype, none is an exercise.",
+    "visit": "Visit {name}"
+  },
+  "career": {
+    "title": "Three companies, one specialism",
+    "lede": "I joined as an intern and left as a mid-level developer at the same firm, then took the specialism to two more. The client roster changed, the duty did not.",
+    "current": "Current",
+    "storefrontsBuilt": "{count, plural, one {# store} other {# stores}}",
+    "present": "now",
+    "roles": {
+      "lighthouse": "Intern → Mid-level Developer",
+      "jbq": "Mid-level Developer",
+      "aggrandize": "Mid-level Developer"
+    }
+  },
+  "products": {
+    "title": "Two products I built and run",
+    "lede": "Outside working hours I do not build portfolio exercises, I ship products. Concept, code, infrastructure, domain and support. Both are live right now.",
+    "visit": "Open {name}",
+    "screenshotAlt": "Home screen of {name}",
+    "evermemo": {
+      "tagline": "A digital gift behind a QR code",
+      "body": "Photos, music and a message become a page that exists for one person only. They point a camera at a printed QR code and the memory opens. It ships templates per occasion, paid plans and a full payment flow."
+    },
+    "futeboldle": {
+      "tagline": "A daily football game",
+      "body": "A secret player to guess every day, comparing five attributes until you land it. There are two daily modes, World Cup and Brasileirão Série A, plus Escalação Retrô, which draws a club and a year and dares you to rebuild the squad. Line-ups come from Wikipedia and Wikidata, curated by hand."
+    }
+  },
+  "stack": {
+    "title": "Tools",
+    "groups": {
+      "languages": "Languages and frameworks",
+      "commerce": "E-commerce",
+      "styling": "Styling",
+      "data": "Data, testing and deploy"
+    }
+  },
+  "contact": {
+    "title": "Let us talk",
+    "lede": "I am open to roles and to projects, in Brazil or abroad.",
+    "directTitle": "Direct",
+    "formTitle": "Or write to me here",
+    "nameLabel": "Name",
+    "namePlaceholder": "What should I call you?",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Where I should reply",
+    "messageLabel": "Message",
+    "messagePlaceholder": "What would you like to talk about?",
+    "submit": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent. I usually reply within one business day.",
+    "errorSend": "The message did not go through. Try again, or write straight to {email}.",
+    "errorConfig": "The form is offline. Write straight to {email}.",
+    "errorName": "Enter your name.",
+    "errorEmail": "Enter a valid email so I can reply.",
+    "errorMessage": "Enter your message.",
+    "phoneLabel": "Phone",
+    "emailLinkLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "whatsappLabel": "WhatsApp"
+  },
+  "footer": {
+    "rights": "© {year} Gianluca Laydner. All rights reserved."
+  },
+  "sectors": {
+    "salon-line": "Beauty and cosmetics",
+    "zema": "Retail and appliances",
+    "entel": "Telecoms",
+    "esplanada": "Furniture",
+    "davo": "Supermarket",
+    "confianca": "Supermarket",
+    "iplace-br": "Apple Premium Reseller",
+    "iplace-uy": "Apple Premium Reseller",
+    "taqi": "Retail and appliances",
+    "volis": "Mattresses",
+    "voulevar": "Furniture",
+    "frigelar": "Refrigeration and HVAC",
+    "eos": "Home appliances"
+  },
+  "countries": {
+    "BR": "Brazil",
+    "UY": "Uruguay",
+    "CL": "Chile"
+  }
+}

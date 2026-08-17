@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local dev server logs
+dev.log
+start.log
+
+# Impeccable QA byproducts. PRODUCT.md and DESIGN.md are the durable records
+# and stay tracked; the screenshots behind a review round do not.
+.impeccable/review/
+.impeccable/mocks/
