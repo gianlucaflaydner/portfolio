@@ -42,7 +42,7 @@ export const PRODUCTS: Product[] = [
     name: 'Futeboldle',
     url: 'https://futeboldle.com.br',
     domain: 'futeboldle.com.br',
-    stack: ['Next.js 16', 'Tailwind v4', 'Curadoria Wikidata'],
+    stack: ['Next.js 16', 'Tailwind v4', '@wikidataCuration'],
     brand: '#0f5132',
     shot: '/images/futeboldle.webp',
     cnpj: '65.412.708/0001-03',

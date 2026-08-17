@@ -29,10 +29,7 @@
     "scrollHint": "Role para percorrer as lojas"
   },
   "stats": {
-    "storefronts": "lojas no ar",
-    "countries": "países",
-    "years": "anos de estrada",
-    "products": "produtos próprios"
+    "storefronts": "lojas no ar"
   },
   "shelf": {
     "title": "Treze lojas online no ar",
@@ -63,6 +60,9 @@
     "futeboldle": {
       "tagline": "Jogo diário de futebol",
       "body": "Todo dia um jogador secreto para adivinhar, comparando cinco atributos até acertar. São dois modos diários, Copa do Mundo e Brasileirão Série A, mais o Escalação Retrô, que sorteia clube e ano e desafia você a montar o timaço. Os elencos vêm de Wikipedia e Wikidata, com curadoria minha."
+    },
+    "items": {
+      "wikidataCuration": "Curadoria Wikidata"
     }
   },
   "stack": {
@@ -72,6 +72,9 @@
       "commerce": "E-commerce",
       "styling": "Estilização",
       "data": "Dados, testes e deploy"
+    },
+    "items": {
+      "semanticHtml": "HTML semântico"
     }
   },
   "contact": {

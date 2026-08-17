@@ -61,7 +61,9 @@ export default async function Products() {
                         key={s}
                         className="type-note rounded-full border border-line px-3 py-1.5"
                       >
-                        {s}
+                        {/* Product names never translate; a leading @ marks the
+                            few entries that are descriptions, not names. */}
+                        {s.startsWith('@') ? t(`items.${s.slice(1)}`) : s}
                       </li>
                     ))}
                   </ul>

@@ -38,7 +38,7 @@ export const STACK: StackGroup[] = [
   {
     id: 'styling',
     accent: '#eb5c2e',
-    items: ['Tailwind CSS', 'Chakra UI', 'CSS', 'HTML semântico'],
+    items: ['Tailwind CSS', 'Chakra UI', 'CSS', '@semanticHtml'],
   },
   {
     id: 'data',
