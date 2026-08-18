@@ -176,6 +176,16 @@
     border-color: var(--color-ink);
   }
 
+  /* Swipe rails carry their own progress bar, so the native bar is redundant
+     furniture under the cards. */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+
   /* Entrance masks. Content is visible by default; the motion layer adds
      `data-anim` only once it has confirmed motion is welcome, so a failed
      script can never leave a section blank. */
