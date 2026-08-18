@@ -68,10 +68,7 @@ export default async function Products() {
                     ))}
                   </ul>
 
-                  <p className="type-quiet mt-6">
-                    {p.domain}
-                    {p.cnpj ? ` · CNPJ ${p.cnpj}` : ''}
-                  </p>
+                  <p className="type-quiet mt-6">{p.domain}</p>
 
                   <a
                     href={p.url}

@@ -27,7 +27,7 @@ A versão anterior falhava nisso: se descrevia como "desenvolvedor apaixonado po
 
 Desenvolvimento fullstack de **e-commerce de varejo em escala**, na plataforma Oracle Commerce Cloud (OCC) e Oracle Storefront (OSF) — um nicho estreito e difícil de copiar: 13 storefronts em produção, em 3 países, para redes de varejo reais onde pessoas de verdade transacionam.
 
-Combinado a algo que quase nenhum portfólio de dev pleno tem: **dois produtos próprios no ar**, concebidos, construídos e operados do zero — um com CNPJ e fluxo de pagamento.
+Combinado a algo que quase nenhum portfólio de dev pleno tem: **dois produtos próprios no ar**, concebidos, construídos e operados do zero, um deles com fluxo de pagamento completo.
 
 ## Operating Context
 
@@ -71,7 +71,7 @@ Os produtos próprios são operados em paralelo, fora do horário de trabalho.
 **Produtos próprios (2), ambos no ar:**
 
 - **EverMemo** — `ever-memo.com`. Presentes digitais: fotos, música e mensagem viram uma página que existe só para uma pessoa, acessada por QR code impresso. Templates por ocasião, planos Básico/Premium com fluxo de pagamento. Next 16 · Prisma/Postgres · next-intl · GSAP + Lenis · Resend · Vercel Blob · Zod · Zustand. Repositório privado.
-- **Futeboldle** — `futeboldle.com.br`. Jogo diário gratuito: adivinhe o jogador secreto comparando cinco atributos, nos modos Copa do Mundo e Brasileirão Série A; no modo Escalação Retrô o jogo sorteia clube e ano e desafia a montar o time. Dados de Wikipedia/Wikidata com curadoria própria. CNPJ 65.412.708/0001-03. Next 16 · Tailwind v4. Repositório privado.
+- **Futeboldle** — `futeboldle.com.br`. Jogo diário gratuito: adivinhe o jogador secreto comparando cinco atributos, nos modos Copa do Mundo e Brasileirão Série A; no modo Escalação Retrô o jogo sorteia clube e ano e desafia a montar o time. Dados de Wikipedia/Wikidata com curadoria própria. Next 16 · Tailwind v4. Repositório privado.
 
 **Repositórios públicos curados (3):** Vista Aerea Filmes (cliente real) · Movies List (GraphQL/Apollo + Jest) · Bitcent (Firebase). Ficam fora do destaque: Pokedex, Sorteador de Amigo Secreto, Hotel Chimia — trabalhos de aprendizado que hoje contradizem o nível pleno.
 

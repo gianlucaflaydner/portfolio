@@ -15,8 +15,6 @@ export interface Product {
   brand: string;
   /** Captured from the running product, not a mockup. */
   shot: string;
-  /** Registered business behind the product, when there is one. */
-  cnpj?: string;
 }
 
 export const PRODUCTS: Product[] = [
@@ -44,7 +42,6 @@ export const PRODUCTS: Product[] = [
     domain: 'futeboldle.com.br',
     stack: ['Next.js 16', 'Tailwind v4', '@wikidataCuration'],
     brand: '#0f5132',
-    shot: '/images/futeboldle.webp',
-    cnpj: '65.412.708/0001-03',
+    shot: '/images/futeboldle.webp'
   },
 ];
