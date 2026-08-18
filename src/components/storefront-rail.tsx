@@ -17,12 +17,17 @@ const GUTTER = 'max(1.5rem,calc((100vw - 84rem)/2 + 2.5rem))';
 /**
  * Thirteen storefronts on one rail.
  *
- * Wide screens pin the section and scrub the rail sideways — the page's one
- * big move. Everything else, narrow screens and reduced motion alike, gets an
- * ordinary vertical grid rather than a broken horizontal one. The markup is
- * the same `<ul>` in DOM order either way, so keyboard and screen-reader
- * traversal is identical; a card that takes focus off-screen scrubs the
- * timeline until it is visible.
+ * Three renditions of one list. Wide screens pin the section and scrub the
+ * rail sideways — the page's one big move. Narrow screens get the same rail as
+ * a swipe carousel: thirteen cards stacked vertically ran for several screens
+ * of thumb work on a phone, which is a lot of paper to spend on a list you
+ * skim. Wide screens that asked for less motion keep the plain grid, since a
+ * one-card-wide carousel makes no sense at that width.
+ *
+ * The markup is the same `<ul>` in DOM order in all three, so keyboard and
+ * screen-reader traversal is identical; in the pinned rendition a card that
+ * takes focus off-screen scrubs the timeline until it is visible, and in the
+ * carousel the browser's own scroll-into-view does the same job.
  */
 export default function StorefrontRail({
   title,
@@ -41,6 +46,7 @@ export default function StorefrontRail({
   const motionAllowed = useMotionAllowed();
   const wide = useIsWide();
   const horizontal = motionAllowed && wide;
+  const carousel = !wide;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -91,6 +97,28 @@ export default function StorefrontRail({
     return () => ctx.revert();
   }, [horizontal]);
 
+  // The carousel drives the same hairline the pinned rail does, off native
+  // scroll rather than a timeline. Without it there is nothing on screen
+  // saying how much of the shelf is left, since the scrollbar is hidden.
+  useEffect(() => {
+    const rail = railRef.current;
+    const bar = barRef.current;
+    if (!rail || !bar || !carousel) return;
+
+    const update = () => {
+      const max = rail.scrollWidth - rail.clientWidth;
+      bar.style.transform = `scaleX(${max > 0 ? rail.scrollLeft / max : 0})`;
+    };
+
+    update();
+    rail.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      rail.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, [carousel]);
+
   const heading = (
     <div
       className="flex flex-wrap items-end justify-between gap-x-10 gap-y-4"
@@ -139,14 +167,24 @@ export default function StorefrontRail({
         >
           <ul
             ref={railRef}
-            className={
-              horizontal
-                ? // Cards sit at a readable height and the rail centres in the
-                  // space left over. Stretching them to fill the pinned
-                  // viewport only moved the empty band inside the cards.
-                  'flex list-none items-stretch gap-5'
-                : 'grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3'
-            }
+            className={cn(
+              horizontal &&
+                // Cards sit at a readable height and the rail centres in the
+                // space left over. Stretching them to fill the pinned
+                // viewport only moved the empty band inside the cards.
+                'flex list-none items-stretch gap-5',
+              carousel &&
+                // Bleeds past the container padding so a card can sit flush
+                // with the screen edge, and scroll-padding puts the snapped
+                // card back on the text margin.
+                // The vertical padding is not decoration: `overflow-x: auto`
+                // clips the other axis too, and without it the hover lift and
+                // the focus ring get sheared off at the top.
+                'no-scrollbar -mx-6 flex snap-x snap-mandatory list-none items-stretch gap-4 overflow-x-auto overscroll-x-contain scroll-px-6 px-6 py-3 sm:-mx-10 sm:scroll-px-10 sm:px-10',
+              !horizontal &&
+                !carousel &&
+                'grid list-none gap-5 sm:grid-cols-2 lg:grid-cols-3',
+            )}
             style={
               horizontal
                 ? { paddingLeft: GUTTER, paddingRight: '4rem' }
@@ -202,7 +240,13 @@ export default function StorefrontRail({
               return (
                 <li
                   key={s.id}
-                  className={horizontal ? 'w-[21rem] shrink-0' : undefined}
+                  className={cn(
+                    horizontal && 'w-[21rem] shrink-0',
+                    // Short of the full width on purpose: the sliver of the
+                    // next card is what tells a thumb there is more to the
+                    // right.
+                    carousel && 'w-[78vw] max-w-[20rem] shrink-0 snap-start',
+                  )}
                 >
                   {s.url ? (
                     <a
@@ -242,11 +286,11 @@ export default function StorefrontRail({
             })}
           </ul>
 
-          {horizontal ? (
+          {horizontal || carousel ? (
             <div
               aria-hidden="true"
-              className="mt-10 h-px bg-line"
-              style={{ marginInline: GUTTER }}
+              className={horizontal ? 'mt-10 h-px bg-line' : 'mt-5 h-px bg-line'}
+              style={{ marginInline: horizontal ? GUTTER : undefined }}
             >
               <div
                 ref={barRef}

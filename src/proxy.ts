@@ -1,11 +1,19 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextResponse, type NextRequest } from 'next/server';
 
-import { routing } from './src/i18n/routing';
+import { routing } from '@/i18n/routing';
 
+/**
+ * Lives in `src/`, beside `app/`, and is named `proxy` rather than
+ * `middleware`: Next 16 renamed the convention, and the file is only picked up
+ * at the same level as the routes it fronts. At the repo root, with `app` one
+ * level down in `src/`, production still ran it but `next dev` did not — so
+ * `/` never redirected in dev and fell through to the 404, which renders on
+ * the root layout that deliberately owns no `<html>`/`<body>`.
+ */
 const intl = createMiddleware(routing);
 
-export default function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const hasLocale = routing.locales.some(
